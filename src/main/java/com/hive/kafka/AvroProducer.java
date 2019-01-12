@@ -31,7 +31,7 @@ public class AvroProducer {
   private final KafkaProducer<byte[], byte[]> producer;
   private final List<GenericRecord> records;
   private final Schema schema;
-  private static final SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+  private static final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
   public AvroProducer(KafkaProducer<byte[], byte[]> producer, List<GenericRecord> records, Schema schema) {
     this.producer = producer;
@@ -75,7 +75,7 @@ public class AvroProducer {
 
   public static void main(String[] args) {
 
-    final int numRecords = Integer.valueOf(System.getProperty("kafka.num.records", "50000"));
+    final int numRecords = Integer.valueOf(System.getProperty("kafka.num.records", "5000"));
     List<GenericRecord> records = new ArrayList<>();
     final String
         connectionString =
@@ -110,7 +110,7 @@ public class AvroProducer {
       }
 
       AvroProducer avroProducer = new AvroProducer(producer, records, Order.getClassSchema());
-      String topic = System.getProperty("kafka.topic", "testing-topic");
+      String topic = System.getProperty("kafka.topic", "testing-topic-3");
       log.info("Sending [{}] records to Topic [{}] with Connection string [{}]", numRecords, topic, connectionString);
       if (started.get()) {
         avroProducer.produce(topic);
