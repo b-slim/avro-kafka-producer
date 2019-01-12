@@ -1,0 +1,39 @@
+{
+  "type" : "record",
+  "name" : "Order",
+  "namespace" : "com.hive.kafka",
+  "version": "1",
+  "fields" : [ {
+    "name" : "ss_product_id",
+    "type" : "long"
+  }, {
+    "name" : "ss_customer_id",
+    "type" : "long"
+  }, {
+    "name" : "__time",
+    "type" : "string",
+    "logicalType" : "timestamp-millis"
+  }, {
+    "name" : "ss_order_number",
+    "type" : "long"
+  }, {
+    "name" : "ss_sales_price",
+    "type" : "long"
+  }, {
+    "name" : "ss_quantity",
+    "type" : "int"
+  }, {
+    "name" : "ss_order_type",
+    "type" : "string"
+  }, {
+    "name" : "ss_store_city",
+    "type" : "string"
+  }, {
+    "name" : "ss_store_county",
+    "type" : "string"
+  }, {
+    "name" : "ss_store_state",
+    "type" : "string"
+  }
+  ]
+}

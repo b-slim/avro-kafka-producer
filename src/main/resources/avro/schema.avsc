@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "Wikipedia",
-  "namespace" : "com.slim.kafka",
+  "namespace" : "com.hive.kafka",
   "version": "1",
   "fields" : [ {
     "name" : "isrobot",
